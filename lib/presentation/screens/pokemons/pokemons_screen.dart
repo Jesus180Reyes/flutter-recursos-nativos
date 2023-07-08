@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:miselaneos_app/presentation/providers/local_auth/local_auth_providers.dart';
 import 'package:miselaneos_app/presentation/providers/pokemons/pokemon_list_provider.dart';
+import 'package:miselaneos_app/presentation/screens/biometrics/boimetric_screen.dart';
 
-class PokemonsScreen extends StatelessWidget {
+class PokemonsScreen extends ConsumerWidget {
   const PokemonsScreen({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
+    final localAuth = ref.watch(localAuthNotifier);
+    if (!localAuth.didAuthenticated) return const BiometricScreen();
     return const Scaffold(
       body: PokemonView(),
     );

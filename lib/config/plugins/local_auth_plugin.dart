@@ -1,6 +1,9 @@
+// ignore_for_file: depend_on_referenced_packages
 import 'package:local_auth/error_codes.dart' as auth_error;
 import 'package:flutter/services.dart';
 import 'package:local_auth/local_auth.dart';
+import 'package:local_auth_android/local_auth_android.dart';
+import 'package:local_auth_ios/local_auth_ios.dart';
 
 class LocalAuthPlugin {
   static final LocalAuthentication auth = LocalAuthentication();
@@ -27,6 +30,16 @@ class LocalAuthPlugin {
     try {
       final bool didAuthenticate = await auth.authenticate(
         localizedReason: 'Porfavor autenticate para continuar',
+        authMessages: const [
+          AndroidAuthMessages(
+            signInTitle: "Se necesita Autenticacion para continuar",
+            biometricHint: "Ingresa tu huella",
+            cancelButton: "No Gracias",
+          ),
+          IOSAuthMessages(
+            cancelButton: "No gracias",
+          ),
+        ],
         options: const AuthenticationOptions(biometricOnly: true),
         // biometricOnly: true
       );
