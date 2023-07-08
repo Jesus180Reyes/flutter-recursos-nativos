@@ -43,6 +43,7 @@ dependencies:
   flutter_compass: ^0.7.0
   dio: ^5.2.1+1
   share_plus: ^7.0.2
+  local_auth: ^2.1.6
 
 dev_dependencies:
   flutter_test:
