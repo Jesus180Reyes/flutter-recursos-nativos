@@ -36,7 +36,6 @@ class LocalAuthPlugin {
         didAuthenticate ? "Hecho" : "Cancelado por usuario"
       );
     } on PlatformException catch (e) {
-      print(e);
       if (e.code == auth_error.notEnrolled) {
         return (false, "No hay biometricos enrolados");
       }
