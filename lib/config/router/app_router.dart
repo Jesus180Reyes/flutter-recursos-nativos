@@ -1,5 +1,12 @@
 import 'package:go_router/go_router.dart';
+import 'package:miselaneos_app/presentation/screens/ads/ads_rewarded_screen.dart';
+import 'package:miselaneos_app/presentation/screens/ads/ads_screen.dart';
+import 'package:miselaneos_app/presentation/screens/badge/badge_screen.dart';
 import 'package:miselaneos_app/presentation/screens/biometrics/boimetric_screen.dart';
+import 'package:miselaneos_app/presentation/screens/location/controlled_map_screen.dart';
+import 'package:miselaneos_app/presentation/screens/location/location_screen.dart';
+import 'package:miselaneos_app/presentation/screens/location/map_screen.dart';
+import 'package:miselaneos_app/presentation/screens/pokemons/db_pokemons_screen.dart';
 import 'package:miselaneos_app/presentation/screens/pokemons/pokemons_screen.dart';
 import 'package:miselaneos_app/presentation/screens/screens.dart';
 
@@ -50,6 +57,34 @@ final router = GoRouter(
               return PokemonScreen(pokemonId: id);
             }),
       ],
+    ),
+    GoRoute(
+      path: "/location",
+      builder: (context, state) => const LocationScreen(),
+    ),
+    GoRoute(
+      path: "/maps",
+      builder: (context, state) => const MapScreen(),
+    ),
+    GoRoute(
+      path: "/controlled-map",
+      builder: (context, state) => const ControlledMapScreen(),
+    ),
+    GoRoute(
+      path: "/badge",
+      builder: (context, state) => const BadgeScreen(),
+    ),
+    GoRoute(
+      path: "/ad-rewarded",
+      builder: (context, state) => const AdsRewardedScreen(),
+    ),
+    GoRoute(
+      path: "/ad-fullscreen",
+      builder: (context, state) => const AdsScreen(),
+    ),
+    GoRoute(
+      path: "/db-pokemons",
+      builder: (context, state) => const DbPokemonsScreen(),
     ),
   ],
 );

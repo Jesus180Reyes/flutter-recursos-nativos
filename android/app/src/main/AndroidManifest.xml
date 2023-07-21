@@ -23,6 +23,9 @@
         android:label="miselaneos_app"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+
+        <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyC8mDpZGeykU9RfF7cyCtNLIxkHOnVvzeI"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"

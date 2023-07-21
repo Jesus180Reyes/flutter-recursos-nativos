@@ -17,6 +17,13 @@ final menuItems = <MenuItem>[
   MenuItem("Brujula", Icons.explore, "/compass"),
   MenuItem("Pokemons", Icons.catching_pokemon, "/pokemons"),
   MenuItem("Biometrics", Icons.fingerprint_outlined, "/biometrics"),
+  MenuItem("Ubicacion", Icons.location_pin, "/location"),
+  MenuItem("Mapas", Icons.map, "/maps"),
+  MenuItem("Biometrics", Icons.gamepad_outlined, "/controlled-map"),
+  MenuItem("Badge", Icons.notification_important, "/badge"),
+  MenuItem("Ad Reward", Icons.ad_units_rounded, "/ad-rewarded"),
+  MenuItem("Ad Fullscreen", Icons.fort_rounded, "/ad-fullscreen"),
+  MenuItem("Background Process", Icons.storage_rounded, "/db-pokemons"),
 ];
 
 class MainMenu extends StatelessWidget {
@@ -76,6 +83,7 @@ class HomeMenuItem extends StatelessWidget {
                 title,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
+                  overflow: TextOverflow.ellipsis,
                   color: Colors.white,
                 ),
               ),
