@@ -30,7 +30,8 @@ class IsarLocalDbDatasource extends LocalDBDatasource {
   Future<Isar> openDB() async {
     final dir = await getApplicationDocumentsDirectory();
     if (Isar.instanceNames.isEmpty) {
-      return await Isar.open([PokemonSchema], directory: dir.path);
+      return await Isar.open([PokemonSchema],
+          directory: dir.path, inspector: true);
     }
     return Future.value(Isar.getInstance());
   }
